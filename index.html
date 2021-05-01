@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{ 
+            overflow: hidden;
+            height: 100vh;
+            width: 100vw;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            line-height: 1.5;
+        }
+        #nav{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            height: 50px;
+            width: 100%;
+            background-color: #740A82;
+            color: white;
+        }
+        #main{
+           background: #A8C2BC;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 100%;
+            /* transform: translateY(-50px); */
+        }
+        .container{
+            margin-bottom: 200px;
+        }
+        ul {
+            display: flex;
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+            color: white;
+            margin-left: 20px;
+            cursor: pointer;
+        }
+        a:hover{
+            color: rgb(207, 197, 197);
+        }
+        #count {
+          
+            color: black;
+            text-align: center;
+            font-size: 8rem;
+        }
+        #increase,#decrease,#reset {
+            height: 40px;
+            width: 100px;
+            margin-left: 10px;
+            cursor: pointer;
+            font-size: 1rem;
+            border-radius: 5px;
+            font-weight: 600;
+            outline: none;
+            border: 2px solid black;
+        }
+        #increase{
+            background: green;
+            color: white;
+        }
+        #decrease {
+            background: red;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+    <nav id="nav">
+        <h1>Aman Khan || Counter</h1>
+        <ul>
+            <li><a href="/javascript/hex.html">HEX </a></li>
+            <li><a href="/javascript/stopwatch.html">Stopwatch </a></li>
+        </ul>  
+    </nav>
+    <main id="main">
+        <div class="container">
+            <h1 id="count">0</h1>
+            <div id="bttons">
+                <button id="increase" onclick="increase()">Increase</button>
+                <button id="decrease" onclick="decrease()">Decrease</button>
+                <button id="reset" onclick="reset()">Reset</button>
+            </div>
+        </div>
+    </main>
+    <script>
+        var c=0;
+
+        var count = document.getElementById("count");
+        function increase(){
+            c++
+            count.innerHTML = c;
+            count.style.color = "green";
+        }
+        function decrease(){
+            c--
+            count.innerHTML = c;
+            if(c<0){
+                count.style.color = "red";
+            }
+        }
+        function reset(){
+            c=0;
+            count.style.color ="black"
+            count.innerHTML = 0;
+        }
+    </script>
+</body>
+</html>
